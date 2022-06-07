@@ -24,11 +24,17 @@ class SellsyEventAction extends Action
         $this->logger->critical(json_encode($data));
         if (isset($data['notif'])) {
             $this->logger->critical("notif found " . gettype($data['notif']));
-        } elseif (isset($data['notif']['relatedid'])) {
-            $this->logger->critical("related id was found");
-        } else {
-            $this->logger->critical("nothing was found");
+            $value = json_decode($data['notif'], true);
+
+            if (isset($value['relatedid'])) {
+                $this->logger->critical("related id was found 1 " . $value['relatedid']);
+            }
+
+            if (isset($data['notif']['relatedid'])) {
+                $this->logger->critical("related id was found 2 " . $data['notif']['relatedid']);
+            }
         }
+
         return $this->respondWithData([]);
     }
 }

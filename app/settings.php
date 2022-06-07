@@ -12,7 +12,7 @@ return function (ContainerBuilder $containerBuilder) {
         'slim.logError' => false,
         'slim.logErrorDetails' => false,
     ], [
-        'logger.name' => DI\env('APP_NAME', 'brs-api-lieu'),
+        'logger.name' => DI\env('APP_NAME', 'myapp'),
         'logger.level' => DI\env('LOG_LEVEL', Logger::DEBUG),
         'logger.type' => DI\env('LOG_TYPE', 'stream'),
         'logger.path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../var/logs/app.log',

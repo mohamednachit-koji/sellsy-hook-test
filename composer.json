@@ -1,0 +1,62 @@
+{
+    "name": "brs/api-lieu",
+    "description": "API Lieu for BRS SI",
+    "homepage": "https://github.com/BorneRecharge/api-lieu",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.1",
+        "ext-http": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "ang3/php-odoo-api-client": "^7.0",
+        "doctrine/dbal": "^3.3",
+        "doctrine/orm": "^2.11",
+        "filp/whoops": "^2.14",
+        "giggsey/libphonenumber-for-php": "^8.12",
+        "guzzlehttp/guzzle": "^7.4",
+        "middlewares/whoops": "^2.0",
+        "monolog/monolog": "^2.5",
+        "php-di/php-di": "^6.4",
+        "phpxmlrpc/phpxmlrpc": "^4.6",
+        "phpxmlrpc/polyfill-xmlrpc": "^1.0.0-rc1",
+        "sentry/sdk": "^3.1",
+        "slim/psr7": "^1.5",
+        "slim/slim": "^4.10",
+        "symfony/cache": "^5.4",
+        "teknoo/sellsy-client": "^3.0",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require-dev": {
+        "jangregor/phpstan-prophecy": "^1.0",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.6",
+        "phpunit/phpunit": "^9.5",
+        "rector/rector": "^0.12",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "replace": {
+        "ext-xmlrpc": "*"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public",
+        "test": "phpunit",
+        "rector": "rector process src --dry-run",
+        "phpcs": "phpcs",
+        "phpstan": "phpstan analyse src tests"
+    }
+}

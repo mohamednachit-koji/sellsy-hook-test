@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+/coverage/
+/vendor/
+/var/logs/*
+!/var/logs/README.md
+/var/cache/*
+.phpunit.result.cache
+*.phar
+.env*
+!.env.example
+.DS_Store
+phpstan.neon
+phpcs.xml
+phpunit.xml

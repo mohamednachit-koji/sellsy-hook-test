@@ -5,7 +5,6 @@ namespace App\Application\Http\Customer;
 use App\Application\Http\Action;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Log\LoggerInterface;
-use Slim\Exception\HttpBadRequestException;
 
 class SellsyEventAction extends Action
 {

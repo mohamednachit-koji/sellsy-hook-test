@@ -5,7 +5,6 @@
     "license": "proprietary",
     "require": {
         "php": "^8.1",
-        "ext-http": "*",
         "ext-json": "*",
         "ext-simplexml": "*",
         "ang3/php-odoo-api-client": "^7.0",

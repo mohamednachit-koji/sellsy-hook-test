@@ -22,9 +22,14 @@ class SellsyEventAction extends Action
     protected function action(): Response
     {
         $data = $this->getFormData();
-        if (!isset($data['notif'])) {
-            throw new HttpBadRequestException($this->request, 'notif attribute not sent by sellsy webhook');
+        $this->logger->critical(json_encode($data));
+        if (isset($data['notif'])) {
+            $this->logger->critical("notif found " . gettype($data['notif']));
+        } elseif (isset($data['notif']['relatedid'])) {
+            $this->logger->critical("related id was found");
+        } else {
+            $this->logger->critical("nothing was found");
         }
-        return $this->respondWithData($data);
+        return $this->respondWithData([]);
     }
 }
